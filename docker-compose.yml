@@ -1,0 +1,9 @@
+# version: '3.8'
+services:
+  ingestlog:
+    build: .
+    environment:
+      - S3_BUCKET=ingestlog
+    volumes:
+      - ~/.aws:/root/.aws
+    restart: unless-stopped
